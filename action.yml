@@ -1,6 +1,10 @@
 name: 'Create GitHub Release'
 description: 'Create a new GitHub release in your CI workflows'
 inputs:
+  draft:
+    description: 'Create releases as a draft so they need to be manually published'
+    required: false
+    default: 'true'
   files:
     description: 'Release artifact file paths separated by new lines'
     required: false

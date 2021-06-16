@@ -22,6 +22,7 @@ export async function run(): Promise<void> {
     const gitTag = core
       .getInput('git-tag', { required: true })
       .replace('refs/tags/', '');
+    const draft = core.getBooleanInput('draft');
     const files = core.getMultilineInput('files');
 
     octokit = github.getOctokit(token);
@@ -34,7 +35,7 @@ export async function run(): Promise<void> {
       name: gitTag,
       // body: '',
       // create as draft so a human still needs to review and publish
-      draft: true,
+      draft,
       // assume prerelease tags look like vx.x.x-beta.1
       prerelease: gitTag.includes('-'),
       target_commitish: github.context.sha,
