@@ -1,0 +1,27 @@
+name: publish
+on:
+  push:
+    tags:
+      - v*.*.*
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+      - run: npm install --global pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run build
+      - run: pnpm run lint
+      - run: pnpm run test
+      - name: Check no untracked changes
+        run: |
+          git_status=$(git status --porcelain)
+          test -z "$git_status" || exit 1
+          echo "$git_status"
+      - uses: .
+        with:
+          git-tag: ${{ github.ref }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}

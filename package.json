@@ -1,0 +1,45 @@
+{
+  "name": "@maxmilton/action-create-release",
+  "description": "GitHub action to create a new GitHub release in your CI workflow",
+  "repository": "maxmilton/action-create-release",
+  "author": "Max Milton <max@happycode.ltd>",
+  "license": "MIT",
+  "private": true,
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "pnpm run prebuild && node build.mjs",
+    "lint": "pnpm run lint:js && pnpm run lint:ts",
+    "lint:js": "eslint --ignore-path .gitignore --ext .cjs,.js,.mjs,.ts .",
+    "lint:ts": "tsc --project test --noEmit",
+    "prebuild": "rm -rf dist; mkdir dist",
+    "test": "echo 'TODO: Tests'; exit 0"
+  },
+  "dependencies": {
+    "@actions/core": "1.4.0",
+    "@actions/github": "5.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "15.12.2",
+    "@typescript-eslint/eslint-plugin": "4.27.0",
+    "@typescript-eslint/parser": "4.27.0",
+    "esbuild": "0.12.9",
+    "eslint": "7.28.0",
+    "eslint-config-airbnb-typescript": "12.3.1",
+    "eslint-plugin-import": "2.23.4",
+    "eslint-plugin-unicorn": "33.0.1",
+    "prettier": "2.3.1",
+    "prettier-plugin-pkg": "0.9.0",
+    "prettier-plugin-sh": "0.6.1",
+    "typescript": "4.3.2"
+  },
+  "prettier": {
+    "arrowParens": "always",
+    "endOfLine": "lf",
+    "singleQuote": true,
+    "trailingComma": "all",
+    "plugins": [
+      "./node_modules/prettier-plugin-pkg",
+      "./node_modules/prettier-plugin-sh"
+    ]
+  }
+}

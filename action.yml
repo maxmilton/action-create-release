@@ -1,0 +1,15 @@
+name: 'Create GitHub Release'
+description: 'Create a new GitHub release in your CI workflows'
+inputs:
+  files:
+    description: 'Release artifact file paths separated by new lines'
+    required: false
+  git-tag:
+    description: 'Git tag name'
+    required: true
+  github-token:
+    description: 'GitHub token'
+    required: true
+runs:
+  using: 'node12'
+  main: 'dist/index.js'

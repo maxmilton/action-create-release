@@ -1,0 +1,4 @@
+{
+  "extends": ["github>maxmilton/renovate-config"],
+  "schedule": ["before 5am every 2 weeks"]
+}

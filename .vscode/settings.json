@@ -1,0 +1,11 @@
+{
+  "editor.codeActionsOnSave": [
+    "source.sortImports",
+    "source.fixAll.format",
+    "source.fixAll.eslint"
+  ],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": false,
+  "js/ts.implicitProjectConfig.checkJs": true
+  // "typescript.tsdk": "./node_modules/typescript/lib"
+}
