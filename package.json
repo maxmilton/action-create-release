@@ -41,5 +41,6 @@
       "./node_modules/prettier-plugin-pkg",
       "./node_modules/prettier-plugin-sh"
     ]
-  }
+  },
+  "version": "0.0.0"
 }
