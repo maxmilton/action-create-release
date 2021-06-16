@@ -23,7 +23,7 @@ jobs:
           git_status=$(git status --porcelain)
           test -z "$git_status" || exit 1
           echo "$git_status"
-      - uses: .
+      - uses: ./
         with:
           git-tag: ${{ github.ref }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
