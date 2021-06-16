@@ -6,6 +6,7 @@ const WARN = 1;
 module.exports = {
   root: true,
   reportUnusedDisableDirectives: true,
+  ignorePatterns: ['/dist/'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     extraFileExtensions: ['.mjs', '.cjs'],
