@@ -23,7 +23,10 @@
     "noImplicitOverride": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "useDefineForClassFields": true
+    "useDefineForClassFields": true,
+
+    // TODO: Handle errors better then remove this
+    "useUnknownInCatchVariables": false
   },
   "exclude": ["coverage", "dist", "node_modules", "test"]
 }
