@@ -11,6 +11,7 @@ esbuild
     banner: { js: '"use strict";' },
     bundle: true,
     minify: true,
+    legalComments: 'external',
     logLevel: 'debug',
   })
   .catch((error) => {
