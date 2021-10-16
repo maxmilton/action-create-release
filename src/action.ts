@@ -79,6 +79,6 @@ export async function run(): Promise<void> {
       }
     }
 
-    core.setFailed(error);
+    core.setFailed(error as Error);
   }
 }
