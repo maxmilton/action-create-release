@@ -36,15 +36,5 @@
     "tsm": "2.1.4",
     "typescript": "4.4.4",
     "uvu": "0.5.2"
-  },
-  "prettier": {
-    "arrowParens": "always",
-    "endOfLine": "lf",
-    "singleQuote": true,
-    "trailingComma": "all",
-    "plugins": [
-      "./node_modules/prettier-plugin-pkg",
-      "./node_modules/prettier-plugin-sh"
-    ]
   }
 }
