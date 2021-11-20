@@ -11,8 +11,8 @@
     "build": "pnpm run prebuild && node build.mjs",
     "lint": "pnpm run lint:js && pnpm run lint:ts",
     "lint:js": "eslint --ignore-path .gitignore --ext .cjs,.js,.mjs,.ts .",
-    "lint:ts": "tsc --project test --noEmit",
-    "prebuild": "rm -rf dist; mkdir dist",
+    "lint:ts": "tsc --project test",
+    "prebuild": "rm -rf dist",
     "test": "c8 --all --include=src --reporter=text --reporter=lcovonly uvu -r tsm test '\\.test\\.ts$'"
   },
   "dependencies": {
