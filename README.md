@@ -23,7 +23,7 @@ See [releases on GitHub](https://github.com/maxmilton/action-create-release/rele
 
 ## License
 
-`action-create-release` is an MIT licensed open source project. See [LICENSE](https://github.com/maxmilton/action-create-release/blob/master/LICENSE).
+MIT license. See [LICENSE](https://github.com/maxmilton/action-create-release/blob/master/LICENSE).
 
 ---
 
