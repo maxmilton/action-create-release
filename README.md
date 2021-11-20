@@ -9,9 +9,38 @@ GitHub action to create a new GitHub release in your CI workflow.
 
 ## Usage
 
-TODO: Write me.
+TODO: Write more detailed explanation
 
-See `.github/workflows/publish.yml` in this repo.
+`.github/workflows/publish.yml`:
+
+```yml
+name: publish
+on:
+  push:
+    tags:
+      - v*.*.*
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+      - run: npm ci
+      - run: npm run build
+      - run: npm run lint
+      - run: npm run test
+      - run: cd dist && zip ../chrome-extension.zip *
+      - uses: maxmilton/action-create-release@v0
+        with:
+          files: |
+            chrome-extension.zip
+          git-tag: ${{ github.ref }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+```
 
 ## Bugs
 
