@@ -10,9 +10,8 @@ import {
   setFailed,
 } from '@actions/core';
 import { context, getOctokit } from '@actions/github';
-import { readFile } from 'fs/promises';
-// eslint-disable-next-line unicorn/import-style
-import { basename, join } from 'path';
+import fs from 'fs';
+import path from 'path';
 
 process.on('uncaughtExceptionMonitor', setFailed);
 process.on('unhandledRejection', setFailed);
@@ -54,7 +53,7 @@ export async function run(): Promise<void> {
     for (const file of files) {
       // https://octokit.github.io/rest.js/v18/#repos-upload-release-asset
       uploads.push(
-        readFile(join(cwd, file)).then((data) =>
+        fs.promises.readFile(path.join(cwd, file)).then((data) =>
           // eslint-disable-next-line implicit-arrow-linebreak
           octokit.rest.repos.uploadReleaseAsset({
             owner: context.repo.owner,
@@ -62,7 +61,7 @@ export async function run(): Promise<void> {
             release_id: release.data.id,
             // FIXME: Handle files types other than .zip
             headers: { 'content-type': 'application/zip' },
-            name: basename(file),
+            name: path.basename(file),
             // @ts-expect-error - Buffer is actually correct, otherwise file is broken
             data,
           })),
