@@ -27,6 +27,7 @@ module.exports = {
     '@typescript-eslint/no-use-before-define': WARN,
     'import/extensions': WARN,
     'import/prefer-default-export': OFF,
+    'no-plusplus': OFF,
     'no-restricted-syntax': OFF,
     'no-void': OFF,
     'unicorn/filename-case': OFF,
