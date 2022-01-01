@@ -8,6 +8,7 @@ specifiers:
   '@typescript-eslint/parser': 5.8.1
   c8: 7.11.0
   esbuild: 0.14.10
+  esbuild-minify-templates: 0.7.2
   eslint: 8.6.0
   eslint-config-airbnb-base: 15.0.0
   eslint-config-airbnb-typescript: 16.1.0
@@ -30,6 +31,7 @@ devDependencies:
   '@typescript-eslint/parser': 5.8.1_eslint@8.6.0+typescript@4.5.4
   c8: 7.11.0
   esbuild: 0.14.10
+  esbuild-minify-templates: 0.7.2_esbuild@0.14.10
   eslint: 8.6.0
   eslint-config-airbnb-base: 15.0.0_b54597effeb7d09a84a334cc3c3dadae
   eslint-config-airbnb-typescript: 16.1.0_e19ca65bd6003a244b0428f0da484453
@@ -64,6 +66,14 @@ packages:
     dependencies:
       tunnel: 0.0.6
     dev: false
+
+  /@ampproject/remapping/1.0.2:
+    resolution: {integrity: sha512-SncaVxs+E3EdoA9xJgHfWPxZfowAgeIsd71VpqCKP6KNKm6s7zSqqvUc70UpKUFsrV3dAmy6qxHoIj5NG+3DiA==}
+    engines: {node: '>=6.0.0'}
+    dependencies:
+      '@jridgewell/resolve-uri': 1.0.0
+      sourcemap-codec: 1.4.8
+    dev: true
 
   /@babel/code-frame/7.16.7:
     resolution: {integrity: sha512-iAXqUn8IIeBTNd72xsFlgaXHkMBMt6y4HJp1tIaK465CWLT/fG1aqB7ykr95gHHmlBdGbFeWWfyB4NJJ0nmeIg==}
@@ -125,6 +135,11 @@ packages:
   /@istanbuljs/schema/0.1.3:
     resolution: {integrity: sha512-ZXRY4jNvVgSVQ8DL3LTcakaAtXwTVUxE81hslsyD2AtoXW/wVob10HkOJ1X/pAlcI7D+2YoZKg5do8G/w6RYgA==}
     engines: {node: '>=8'}
+    dev: true
+
+  /@jridgewell/resolve-uri/1.0.0:
+    resolution: {integrity: sha512-9oLAnygRMi8Q5QkYEU4XWK04B+nuoXoxjRvRxgjuChkLZFBja0YPSgdZ7dZtwhncLBcQe/I/E+fLuk5qxcYVJA==}
+    engines: {node: '>=6.0.0'}
     dev: true
 
   /@nodelib/fs.scandir/2.1.5:
@@ -229,6 +244,12 @@ packages:
     dependencies:
       '@octokit/openapi-types': 11.2.0
     dev: false
+
+  /@types/estree/0.0.45:
+    resolution: {integrity: sha512-jnqIUKDUqJbDIUxm0Uj7bnlMnRm1T/eZ9N+AVMqhPgzrba2GhGG5o/jCTwmdPK709nEZsGoMzXEDUjcXHa3W0g==}
+    requiresBuild: true
+    dev: true
+    optional: true
 
   /@types/istanbul-lib-coverage/2.0.4:
     resolution: {integrity: sha512-z/QT1XN4K4KYuslS23k62yDIDLwLFkzxOuMplDtObz0+y7VqJCaO2o+SPwHCvLFZh7xazvvoor2tA/hPz9ee7g==}
@@ -430,6 +451,13 @@ packages:
       call-bind: 1.0.2
       define-properties: 1.1.3
       es-abstract: 1.19.1
+    dev: true
+
+  /astray/1.1.1:
+    resolution: {integrity: sha512-LizvbENqdc8tdvrms/YyYoTtlr43INJni4YZSFr8nNdfOgafi82Hcrfhjm0MdwLhRFBrDhRwtH/0fnntlESxsQ==}
+    engines: {node: '>=8'}
+    optionalDependencies:
+      '@types/estree': 0.0.45
     dev: true
 
   /balanced-match/1.0.2:
@@ -787,6 +815,19 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /esbuild-minify-templates/0.7.2_esbuild@0.14.10:
+    resolution: {integrity: sha512-M48XijE7gLP0RPNtcO24aCAE0md4hmtB9rwmjaGVvvZEkoykFSe/qBAkXGrR3oBKAvttZrMVS+r91fhkDFB1qw==}
+    engines: {node: '>= 12'}
+    peerDependencies:
+      esbuild: ^0.13.0 || ^0.14.0
+    dependencies:
+      '@ampproject/remapping': 1.0.2
+      astray: 1.1.1
+      esbuild: 0.14.10
+      magic-string: 0.25.7
+      meriyah: 4.2.0
+    dev: true
 
   /esbuild-netbsd-64/0.14.10:
     resolution: {integrity: sha512-6Gg8neVcLeyq0yt9bZpReb8ntZ8LBEjthxrcYWVrBElcltnDjIy1hrzsujt0+sC2rL+TlSsE9dzgyuvlDdPp2w==}
@@ -1563,6 +1604,12 @@ packages:
       yallist: 4.0.0
     dev: true
 
+  /magic-string/0.25.7:
+    resolution: {integrity: sha512-4CrMT5DOHTDk4HYDlzmwu4FVCcIYI8gauveasrdCu2IKIFOJ3f0v/8MDGJCDL9oD2ppz/Av1b0Nj345H9M+XIA==}
+    dependencies:
+      sourcemap-codec: 1.4.8
+    dev: true
+
   /make-dir/3.1.0:
     resolution: {integrity: sha512-g3FeP20LNwhALb/6Cz6Dd4F2ngze0jz7tbzrD2wAV+o9FeNHe4rL+yK2md0J/fiSf1sa1ADhXqi5+oVwOM/eGw==}
     engines: {node: '>=8'}
@@ -1573,6 +1620,11 @@ packages:
   /merge2/1.4.1:
     resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
     engines: {node: '>= 8'}
+    dev: true
+
+  /meriyah/4.2.0:
+    resolution: {integrity: sha512-fCVh5GB9YT53Bq14l00HLYE3i9DywrY0JVZxbk0clXWDuMsUKKwluvC5sY0bMBqHbnIbpIjfSSIsnrzbauA8Yw==}
+    engines: {node: '>=10.4.0'}
     dev: true
 
   /micromatch/4.0.4:
@@ -1981,6 +2033,10 @@ packages:
   /source-map/0.7.3:
     resolution: {integrity: sha512-CkCj6giN3S+n9qrYiBTX5gystlENnRW5jZeNLHpe6aue+SrHcG5VYwujhW9s4dY31mEGsxBDrHR6oI69fTXsaQ==}
     engines: {node: '>= 8'}
+    dev: true
+
+  /sourcemap-codec/1.4.8:
+    resolution: {integrity: sha512-9NykojV5Uih4lgo5So5dtw+f0JgJX30KCNI8gwhz2J9A15wD0Ml6tjHKwf6fTSa6fAdVBdZeNOs9eJ71qCk8vA==}
     dev: true
 
   /spdx-correct/3.1.1:
