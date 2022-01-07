@@ -56,4 +56,4 @@ MIT license. See [LICENSE](https://github.com/maxmilton/action-create-release/bl
 
 ---
 
-© 2021 [Max Milton](https://maxmilton.com)
+© 2022 [Max Milton](https://maxmilton.com)
