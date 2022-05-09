@@ -16,7 +16,7 @@
     "test": "c8 --all --include=src --reporter=text --reporter=lcovonly uvu -r tsm test '\\.test\\.ts$'"
   },
   "dependencies": {
-    "@actions/core": "1.7.0",
+    "@actions/core": "1.8.0",
     "@actions/github": "5.0.1"
   },
   "devDependencies": {
