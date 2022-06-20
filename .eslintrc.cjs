@@ -2,16 +2,14 @@ const OFF = 0;
 const WARN = 1;
 const ERROR = 2;
 
-// eslint-disable-next-line max-len
-// /** @type {import('eslint').Linter.Config & { parserOptions: import('@typescript-eslint/types').ParserOptions }} */
 module.exports = {
   root: true,
   reportUnusedDisableDirectives: true,
   ignorePatterns: ['/dist/'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    extraFileExtensions: ['.mjs', '.cjs'],
     project: ['./test/tsconfig.json'],
+    tsconfigRootDir: __dirname,
   },
   extends: [
     'eslint:recommended',
