@@ -53,7 +53,7 @@ export async function run(): Promise<void> {
     for (const file of files) {
       // https://octokit.github.io/rest.js/v18/#repos-upload-release-asset
       uploads.push(
-        fs.promises.readFile(path.join(cwd, file)).then((data) =>
+        fs.promises.readFile(path.resolve(cwd, file)).then((data) =>
           // eslint-disable-next-line implicit-arrow-linebreak
           octokit.rest.repos.uploadReleaseAsset({
             owner: context.repo.owner,
