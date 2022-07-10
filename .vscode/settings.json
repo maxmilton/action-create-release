@@ -1,6 +1,7 @@
 {
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "git.branchProtection": ["master"],
   "js/ts.implicitProjectConfig.checkJs": true,
   "prettier.ignorePath": ".gitignore",
   "[javascript]": {
