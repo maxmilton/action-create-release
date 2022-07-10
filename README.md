@@ -9,6 +9,8 @@ GitHub action to create a new GitHub release in your CI workflow.
 
 ## Usage
 
+XXX: `files` currently only supports `.zip` files! Only valid relative or absolute paths are allowed. Globs are not supported.
+
 TODO: Write more detailed explanation
 
 `.github/workflows/publish.yml`:
