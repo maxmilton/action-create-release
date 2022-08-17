@@ -8,7 +8,7 @@ specifiers:
   '@typescript-eslint/parser': 5.33.1
   c8: 7.12.0
   esbuild: 0.14.53
-  esbuild-minify-templates: 0.8.0
+  esbuild-minify-templates: 0.9.2
   eslint: 8.21.0
   eslint-config-airbnb-base: 15.0.0
   eslint-config-airbnb-typescript: 17.0.0
@@ -31,7 +31,7 @@ devDependencies:
   '@typescript-eslint/parser': 5.33.1_qugx7qdu5zevzvxaiqyxfiwquq
   c8: 7.12.0
   esbuild: 0.14.53
-  esbuild-minify-templates: 0.8.0_esbuild@0.14.53
+  esbuild-minify-templates: 0.9.2_esbuild@0.14.53
   eslint: 8.21.0
   eslint-config-airbnb-base: 15.0.0_jatgrcxl4x7ywe7ak6cnjca2ae
   eslint-config-airbnb-typescript: 17.0.0_h5dt3g2iedr3qspvoza3n3hj6u
@@ -938,17 +938,17 @@ packages:
     dev: true
     optional: true
 
-  /esbuild-minify-templates/0.8.0_esbuild@0.14.53:
-    resolution: {integrity: sha512-QP0myitL1Xd9BXhSVUprYBEE3WcYBhTE+aL87l+okR8L3/M3Wx9nzuL+VSJmWEO/hWdkoeqmLddfcK0u5UJubw==}
+  /esbuild-minify-templates/0.9.2_esbuild@0.14.53:
+    resolution: {integrity: sha512-P5iLK52qrTM2OisTBwRpi05gnL7BL5HesGXj58dyAwHd8NCUC9d0wsovnyYNxsujetnrT3hsFrQXJbj3s2THtg==}
     engines: {node: '>= 12'}
     peerDependencies:
-      esbuild: ^0.14.0
+      esbuild: ^0.13.0 || ^0.14.0 || ^0.15.0
     dependencies:
       '@ampproject/remapping': 2.2.0
       astray: 1.1.1
       esbuild: 0.14.53
       magic-string: 0.26.2
-      meriyah: 4.2.1
+      meriyah: 4.3.0
     dev: true
 
   /esbuild-netbsd-64/0.14.53:
@@ -1827,8 +1827,8 @@ packages:
     engines: {node: '>= 8'}
     dev: true
 
-  /meriyah/4.2.1:
-    resolution: {integrity: sha512-Uv5sWsmjFNC6IszEmHo5bzJLL+kqjQ/VrEj9Agqsqtx7B6dcxHnHLew1ioJD19HNXrxrRZltPi+NVh12I8RLXA==}
+  /meriyah/4.3.0:
+    resolution: {integrity: sha512-YBm59F1syHtwN4/ULfU1cgAICONB+Z+sNV/96albrQbMKhWDHUivH7Pp+SOtjI0Gtx4/pEqeSOBBYaC+k5Bsdg==}
     engines: {node: '>=10.4.0'}
     dev: true
 
