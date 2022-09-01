@@ -305,8 +305,8 @@ packages:
       '@octokit/openapi-types': 12.11.0
     dev: false
 
-  /@pkgr/utils/2.3.0:
-    resolution: {integrity: sha512-7dIJ9CRVzBnqyEl7diUHPUFJf/oty2SeoVzcMocc5PeOUDK9KGzvgIBjGRRzzlRDaOjh3ADwH0WeibQvi3ls2Q==}
+  /@pkgr/utils/2.3.1:
+    resolution: {integrity: sha512-wfzX8kc1PMyUILA+1Z/EqoE4UCXGy0iRGMhPwdfae1+f0OXlLqCk+By+aMzgJBzR9AzS4CDizioG6Ss1gvAFJw==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
     dependencies:
       cross-spawn: 7.0.3
@@ -1088,7 +1088,7 @@ packages:
       '@ampproject/remapping': 2.2.0
       astray: 1.1.1
       esbuild: 0.15.6
-      magic-string: 0.26.2
+      magic-string: 0.26.3
       meriyah: 4.3.0
     dev: true
 
@@ -1580,12 +1580,12 @@ packages:
     resolution: {integrity: sha512-dm9s5Pw7Jc0GvMYbshN6zchCA9RgQlzzEZX3vylR9IqFfS8XciblUXOKfW6SiuJ0e13eDYZoZV5wdrev7P3Nwg==}
     engines: {node: ^10.12.0 || >=12.0.0}
     dependencies:
-      flatted: 3.2.6
+      flatted: 3.2.7
       rimraf: 3.0.2
     dev: true
 
-  /flatted/3.2.6:
-    resolution: {integrity: sha512-0sQoMh9s0BYsm+12Huy/rkKxVu4R1+r96YX5cG44rHV0pQ6iC3Q+mkoMFaGWObMFYQxCVT+ssG1ksneA2MI9KQ==}
+  /flatted/3.2.7:
+    resolution: {integrity: sha512-5nqDSxl8nn5BSNxyR3n4I6eDmbolI6WT+QqR547RwxQapgjQBmtktdP+HTBb/a/zLsbzERTONyUB5pefh5TtjQ==}
     dev: true
 
   /foreground-child/2.0.0:
@@ -2020,8 +2020,8 @@ packages:
       yallist: 4.0.0
     dev: true
 
-  /magic-string/0.26.2:
-    resolution: {integrity: sha512-NzzlXpclt5zAbmo6h6jNc8zl2gNRGHvmsZW4IvZhTC4W7k4OlLP+S5YLussa/r3ixNT66KOQfNORlXHSOy/X4A==}
+  /magic-string/0.26.3:
+    resolution: {integrity: sha512-u1Po0NDyFcwdg2nzHT88wSK0+Rih0N1M+Ph1Sp08k8yvFFU3KR72wryS7e1qMPJypt99WB7fIFVCA92mQrMjrg==}
     engines: {node: '>=12'}
     dependencies:
       sourcemap-codec: 1.4.8
@@ -2287,7 +2287,7 @@ packages:
       mvdan-sh: 0.10.1
       prettier: 2.7.1
       sh-syntax: 0.3.7
-      synckit: 0.8.3
+      synckit: 0.8.4
     dev: true
 
   /prettier/2.7.1:
@@ -2459,7 +2459,7 @@ packages:
     resolution: {integrity: sha512-cOYcUWwhCuHCXi49RhFRCyJEK3iPj1Ziz9DpViV3tbZOwXD49QzIN3MpOLJNxh2qwq2lJJZaKMVw9qNi4jTC0w==}
     dependencies:
       spdx-expression-parse: 3.0.1
-      spdx-license-ids: 3.0.11
+      spdx-license-ids: 3.0.12
     dev: true
 
   /spdx-exceptions/2.3.0:
@@ -2470,11 +2470,11 @@ packages:
     resolution: {integrity: sha512-cbqHunsQWnJNE6KhVSMsMeH5H/L9EpymbzqTQ3uLwNCLZ1Q481oWaofqH7nO6V07xlXwY6PhQdQ2IedWx/ZK4Q==}
     dependencies:
       spdx-exceptions: 2.3.0
-      spdx-license-ids: 3.0.11
+      spdx-license-ids: 3.0.12
     dev: true
 
-  /spdx-license-ids/3.0.11:
-    resolution: {integrity: sha512-Ctl2BrFiM0X3MANYgj3CkygxhRmr9mi6xhejbdO960nF6EDJApTYpn0BQnDKlnNBULKiCN1n3w9EBkHK8ZWg+g==}
+  /spdx-license-ids/3.0.12:
+    resolution: {integrity: sha512-rr+VVSXtRhO4OHbXUiAF7xW3Bo9DuuF6C5jH+q/x15j2jniycgKbxU09Hr0WqlSLUs4i4ltHGXqTe7VHclYWyA==}
     dev: true
 
   /string-width/4.2.3:
@@ -2545,11 +2545,11 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /synckit/0.8.3:
-    resolution: {integrity: sha512-1goXnDYNJlKwCM37f5MTzRwo+8SqutgVtg2d37D6YnHHT4E3IhQMRfKiGdfTZU7LBlI6T8inCQUxnMBFHrbqWw==}
+  /synckit/0.8.4:
+    resolution: {integrity: sha512-Dn2ZkzMdSX827QbowGbU/4yjWuvNaCoScLLoMo/yKbu+P4GBR6cRGKZH27k6a9bRzdqcyd1DE96pQtQ6uNkmyw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     dependencies:
-      '@pkgr/utils': 2.3.0
+      '@pkgr/utils': 2.3.1
       tslib: 2.4.0
     dev: true
 
