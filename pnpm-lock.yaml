@@ -3,7 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@actions/core': 1.10.0
   '@actions/github': 5.1.1
-  '@types/node': 18.11.11
+  '@types/node': 18.11.17
   '@typescript-eslint/eslint-plugin': 5.47.0
   '@typescript-eslint/parser': 5.47.0
   c8: 7.12.0
@@ -26,7 +26,7 @@ dependencies:
   '@actions/github': 5.1.1
 
 devDependencies:
-  '@types/node': 18.11.11
+  '@types/node': 18.11.17
   '@typescript-eslint/eslint-plugin': 5.47.0_dvmqlqg4r5ba7a4i47pzcunkky
   '@typescript-eslint/parser': 5.47.0_f5jcydormhcqaoeadqwgqigppy
   c8: 7.12.0
@@ -539,8 +539,8 @@ packages:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
     dev: true
 
-  /@types/node/18.11.11:
-    resolution: {integrity: sha512-KJ021B1nlQUBLopzZmPBVuGU9un7WJd/W4ya7Ih02B4Uwky5Nja0yGYav2EfYIk0RR2Q9oVhf60S2XR1BCWJ2g==}
+  /@types/node/18.11.17:
+    resolution: {integrity: sha512-HJSUJmni4BeDHhfzn6nF0sVmd1SMezP7/4F0Lq+aXzmp2xm9O7WXrUtHW/CHlYVtZUbByEvWidHqRtcJXGF2Ng==}
     dev: true
 
   /@types/normalize-package-data/2.4.1:
