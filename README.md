@@ -1,4 +1,4 @@
-[![Build status](https://img.shields.io/github/workflow/status/maxmilton/action-create-release/ci)](https://github.com/maxmilton/action-create-release/actions)
+[![Build status](https://img.shields.io/github/actions/workflow/status/maxmilton/action-create-release/ci.yml?branch=master)](https://github.com/maxmilton/action-create-release/actions)
 [![Coverage status](https://img.shields.io/codeclimate/coverage/maxmilton/action-create-release)](https://codeclimate.com/github/maxmilton/action-create-release)
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/maxmilton/action-create-release)](https://github.com/maxmilton/action-create-release/releases)
 [![Licence](https://img.shields.io/github/license/maxmilton/action-create-release.svg)](https://github.com/maxmilton/action-create-release/blob/master/LICENSE)
