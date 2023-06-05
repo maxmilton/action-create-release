@@ -1,6 +1,6 @@
 {
   "name": "@maxmilton/action-create-release",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "type": "module",
   "description": "GitHub action to create a new GitHub release in your CI workflow",
   "repository": "maxmilton/action-create-release",
