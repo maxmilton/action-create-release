@@ -1,7 +1,7 @@
+import { createRequire } from 'node:module';
 import { run } from './action';
 
 // HACK: Workaround for bun not outputting compatible code for Node.js
-// eslint-disable-next-line unicorn/prefer-module
-import.meta.require ??= require;
+import.meta.require = createRequire(import.meta.url);
 
 void run();
