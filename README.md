@@ -9,9 +9,7 @@ GitHub action to create a new GitHub release in your CI workflow.
 
 ## Usage
 
-XXX: `files` currently only supports `.zip` files! Only valid relative or absolute paths are allowed. Globs are not supported.
-
-TODO: Write more detailed explanation
+> NOTE: `files` currently only supports `.zip` files. Only valid relative or absolute paths are allowed and globs are not supported.
 
 `.github/workflows/publish.yml`:
 
@@ -19,8 +17,7 @@ TODO: Write more detailed explanation
 name: publish
 on:
   push:
-    tags:
-      - v*.*.*
+    tags: [v*.*.*]
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -28,9 +25,9 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 20
       - run: npm ci
       - run: npm run build
       - run: npm run lint
@@ -58,4 +55,4 @@ MIT license. See [LICENSE](https://github.com/maxmilton/action-create-release/bl
 
 ---
 
-© 2022 [Max Milton](https://maxmilton.com)
+© 2023 [Max Milton](https://maxmilton.com)
