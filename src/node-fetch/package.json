@@ -1,0 +1,7 @@
+{
+  "name": "node-fetch",
+  "version": "99.0.0",
+  "license": "MIT",
+  "type": "module",
+  "main": "stub.js"
+}
