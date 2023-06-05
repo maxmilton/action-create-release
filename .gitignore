@@ -1,7 +1,6 @@
 *-lock.json*
+*-lock.yaml
 *.lock
 *.log
 /coverage/
-dist/*
 node_modules
-!/dist/index.js

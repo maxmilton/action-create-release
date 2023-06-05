@@ -2,6 +2,8 @@
 // https://github.com/actions/toolkit/tree/master/packages/core
 // https://github.com/actions/toolkit/tree/master/packages/github
 
+/// <reference types="node" />
+
 import {
   getBooleanInput,
   getInput,
@@ -10,8 +12,8 @@ import {
   setFailed,
 } from '@actions/core';
 import { context, getOctokit } from '@actions/github';
-import fs from 'fs';
-import path from 'path';
+import { readFile } from 'node:fs/promises';
+import { basename, resolve } from 'node:path';
 
 process.on('uncaughtExceptionMonitor', setFailed);
 process.on('unhandledRejection', setFailed);
@@ -19,7 +21,6 @@ process.on('unhandledRejection', setFailed);
 type Await<T> = T extends Promise<infer U> ? U : T;
 
 export async function run(): Promise<void> {
-  const cwd = process.cwd();
   let octokit: ReturnType<typeof getOctokit>;
   let release: Await<ReturnType<typeof octokit.rest.repos.createRelease>>;
 
@@ -31,6 +32,7 @@ export async function run(): Promise<void> {
     );
     const draft = getBooleanInput('draft');
     const files = getMultilineInput('files');
+    const uploads = [];
 
     octokit = getOctokit(token);
 
@@ -48,23 +50,21 @@ export async function run(): Promise<void> {
       target_commitish: context.sha,
     });
 
-    const uploads = [];
-
     for (const file of files) {
       // https://octokit.github.io/rest.js/v18/#repos-upload-release-asset
       uploads.push(
-        fs.promises.readFile(path.resolve(cwd, file)).then((data) =>
-          // eslint-disable-next-line implicit-arrow-linebreak
+        readFile(resolve(file)).then((data) =>
           octokit.rest.repos.uploadReleaseAsset({
             owner: context.repo.owner,
             repo: context.repo.repo,
             release_id: release.data.id,
-            // FIXME: Handle files types other than .zip
+            // TODO: Handle files types other than .zip
             headers: { 'content-type': 'application/zip' },
-            name: path.basename(file),
+            name: basename(file),
             // @ts-expect-error - Buffer is actually correct, otherwise file is broken
             data,
-          })),
+          }),
+        ),
       );
     }
 
