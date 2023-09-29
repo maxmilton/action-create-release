@@ -5,10 +5,11 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v1
         with:
           bun-version: latest
@@ -19,8 +20,8 @@ jobs:
       - name: Check no untracked changes
         run: |
           git_status=$(git status --porcelain)
-          test -z "$git_status" || exit 1
           echo "$git_status"
+          test -z "$git_status" || exit 1
       - uses: ./
         with:
           git-tag: ${{ github.ref }}
