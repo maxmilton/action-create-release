@@ -36,6 +36,6 @@
     "eslint-plugin-prettier": "4.2.1",
     "eslint-plugin-unicorn": "47.0.0",
     "prettier": "2.8.8",
-    "typescript": "5.1.6"
+    "typescript": "5.2.2"
   }
 }
