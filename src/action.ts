@@ -3,6 +3,7 @@
 // https://github.com/actions/toolkit/tree/master/packages/github
 
 /// <reference types="node" />
+/* eslint @typescript-eslint/no-non-null-assertion: "warn" */
 
 import {
   getBooleanInput,
@@ -19,10 +20,12 @@ process.on('uncaughtExceptionMonitor', setFailed);
 process.on('unhandledRejection', setFailed);
 
 type Await<T> = T extends Promise<infer U> ? U : T;
+type OctoKit = ReturnType<typeof getOctokit>;
+type Release = Await<ReturnType<OctoKit['rest']['repos']['createRelease']>>;
 
 export async function run(): Promise<void> {
-  let octokit: ReturnType<typeof getOctokit>;
-  let release: Await<ReturnType<typeof octokit.rest.repos.createRelease>>;
+  let octokit: OctoKit | undefined;
+  let release: Release | undefined;
 
   try {
     const token = getInput('github-token', { required: true });
@@ -54,10 +57,10 @@ export async function run(): Promise<void> {
       // https://octokit.github.io/rest.js/v18/#repos-upload-release-asset
       uploads.push(
         readFile(resolve(file)).then((data) =>
-          octokit.rest.repos.uploadReleaseAsset({
+          octokit!.rest.repos.uploadReleaseAsset({
             owner: context.repo.owner,
             repo: context.repo.repo,
-            release_id: release.data.id,
+            release_id: release!.data.id,
             // TODO: Handle files types other than .zip
             headers: { 'content-type': 'application/zip' },
             name: basename(file),
@@ -73,7 +76,6 @@ export async function run(): Promise<void> {
     info(`Git tag: ${gitTag}`);
     info(`Release URL: ${release.data.html_url}`);
   } catch (error) {
-    // @ts-expect-error - safe use before define
     if (octokit && release) {
       try {
         await octokit.rest.repos.deleteRelease({
