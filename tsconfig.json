@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
+    "moduleDetection": "force",
     "moduleResolution": "bundler",
     "esModuleInterop": false,
     "resolveJsonModule": true,
@@ -17,9 +18,7 @@
     "noUnusedLocals": false, // covered by eslint
     "noUnusedParameters": false, // covered by eslint
     "verbatimModuleSyntax": true,
-
-    "types": ["bun-types"]
   },
   "include": ["src", "test"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "references": [{ "path": "./tsconfig.node.json" }],
 }
