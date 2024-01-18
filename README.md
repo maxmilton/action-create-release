@@ -5,11 +5,11 @@
 
 # action-create-release
 
-GitHub action to create a new GitHub release in your CI workflow.
+A GitHub action to create a new GitHub release with optional asset files in your CI workflow.
 
 ## Usage
 
-> NOTE: `files` currently only supports `.zip` files. Only valid relative or absolute paths are allowed and globs are not supported.
+> NOTE: The `files` input currently only supports `.zip` files. Only valid relative or absolute paths are allowed and globs are not supported.
 
 `.github/workflows/publish.yml`:
 
@@ -24,8 +24,8 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 20
       - run: npm ci
@@ -40,6 +40,8 @@ jobs:
           git-tag: ${{ github.ref }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
 ```
+
+Also, see [this repo's `publish.yml` workflow](.github/workflows/publish.yml) for an example.
 
 ## Bugs
 
