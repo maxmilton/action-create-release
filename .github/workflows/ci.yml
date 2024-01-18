@@ -36,3 +36,19 @@ jobs:
           bun-version: latest
       - run: bun install --frozen-lockfile
       - run: bun run lint
+  # this is more for a heads up and should not cause PRs to fail
+  no-untracked:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+      - run: bun install --frozen-lockfile
+      - run: bun run build
+      - name: Check no untracked changes
+        run: |
+          git_status=$(git status --porcelain)
+          echo "$git_status"
+          test -z "$git_status" || exit 1
