@@ -1,5 +1,6 @@
-name: 'Create GitHub Release'
+name: 'Create GitHub Release With Assets'
 description: 'Create a new GitHub release in your CI workflows'
+author: maxmilton
 inputs:
   draft:
     description: 'Create releases as a draft so they need to be manually published'
