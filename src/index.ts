@@ -1,3 +1,3 @@
 import { run } from './action';
 
-void run();
+await run();

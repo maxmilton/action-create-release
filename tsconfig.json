@@ -17,8 +17,8 @@
     "noImplicitOverride": true,
     "noUnusedLocals": false, // covered by eslint
     "noUnusedParameters": false, // covered by eslint
-    "verbatimModuleSyntax": true,
+    "verbatimModuleSyntax": true
   },
   "include": ["src", "test"],
-  "references": [{ "path": "./tsconfig.node.json" }],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }
