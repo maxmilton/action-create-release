@@ -35,7 +35,7 @@
     "eslint-config-airbnb-typescript": "18.0.0",
     "eslint-plugin-import": "2.29.1",
     "eslint-plugin-unicorn": "51.0.1",
-    "terser": "5.29.2",
+    "terser": "5.31.0",
     "typescript": "5.4.5"
   }
 }
