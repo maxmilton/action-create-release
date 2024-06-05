@@ -29,6 +29,7 @@ module.exports = {
     'no-restricted-syntax': OFF,
     'no-void': OFF,
     'unicorn/filename-case': OFF,
+    'unicorn/import-style': WARN,
     'unicorn/no-abusive-eslint-disable': WARN,
     'unicorn/no-null': OFF,
     'unicorn/prevent-abbreviations': OFF,
