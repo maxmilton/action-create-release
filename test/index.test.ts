@@ -7,6 +7,7 @@ describe('dist files', () => {
   for (const filename of distFiles) {
     // eslint-disable-next-line @typescript-eslint/no-loop-func
     test(`"${filename}" exists`, () => {
+      expect.assertions(2);
       const file = Bun.file(filename);
       expect(file.exists()).resolves.toBeTruthy();
       expect(file.size).toBeGreaterThan(0);
@@ -15,11 +16,24 @@ describe('dist files', () => {
 });
 
 describe('package.json', () => {
+  test('is an object', () => {
+    expect.assertions(1);
+    expect(pkg).toBePlainObject();
+  });
+
+  test('is valid JSON', () => {
+    expect.assertions(1);
+    // eslint-disable-next-line unicorn/prefer-structured-clone
+    expect(JSON.parse(JSON.stringify(pkg))).toEqual(pkg);
+  });
+
   test('has "type" set as "module"', () => {
+    expect.assertions(1);
     expect(pkg.type).toBe('module');
   });
 
   test('has correct "main" value', () => {
+    expect.assertions(1);
     expect(pkg.main).toBe('index.mjs');
   });
 });
