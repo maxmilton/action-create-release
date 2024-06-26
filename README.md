@@ -1,3 +1,20 @@
+Deprecation notice: Use the GitHub CLI tool instead. It's available on all GitHub-hosted runners.
+
+```diff
+-      - uses: maxmilton/action-create-release@v0
+-        with:
+-          files: |
+-            chrome-extension.zip
+-          git-tag: ${{ github.ref }}
+-          github-token: ${{ secrets.GITHUB_TOKEN }}
++      - run: gh release create "${{ github.ref_name }}" --draft --generate-notes
++        shell: bash
++        env:
++          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
+
+---
+
 [![Build status](https://img.shields.io/github/actions/workflow/status/maxmilton/action-create-release/ci.yml?branch=master)](https://github.com/maxmilton/action-create-release/actions)
 [![Coverage status](https://img.shields.io/codeclimate/coverage/maxmilton/action-create-release)](https://codeclimate.com/github/maxmilton/action-create-release)
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/maxmilton/action-create-release)](https://github.com/maxmilton/action-create-release/releases)
