@@ -7,7 +7,7 @@ Deprecation notice: Use the GitHub CLI tool instead. It's available on all GitHu
 -            chrome-extension.zip
 -          git-tag: ${{ github.ref }}
 -          github-token: ${{ secrets.GITHUB_TOKEN }}
-+      - run: gh release create "${{ github.ref_name }}" --draft --generate-notes
++      - run: gh release create "${{ github.ref_name }}" chrome-extension.zip --draft --generate-notes
 +        shell: bash
 +        env:
 +          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
